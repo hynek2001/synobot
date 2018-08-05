@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-start here - synology bot integration
+synology bot integration
 =====================================
 
 here is step by step, howto integrate bot. You need access to synology
