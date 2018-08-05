@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>start here - synology bot integration &mdash; synobot 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> synobot
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">start here - synology bot integration</a></li>
+<li><a class="reference internal" href="#usage">usage</a><ul>
+<li><a class="reference internal" href="#explanation">explanation</a></li>
+<li><a class="reference internal" href="#init">init</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#synobot-api">synobot api</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">synobot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>start here - synology bot integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="start-here-synology-bot-integration">
+<h1>start here - synology bot integration<a class="headerlink" href="#start-here-synology-bot-integration" title="Permalink to this headline">¶</a></h1>
+<p>here is step by step, howto integrate bot. You need access to synology
+chat app. This means you need synology NAS etc…</p>
+<blockquote>
+<div><ul class="simple">
+<li>create for yourself localBotToken. It shall be string [a-zA-Z0-9] 20 characters long…ie 1234567890abcdefghij. It will be used during integration</li>
+<li>check what is ip address of bot. Synology chat server shall be able to reach it!</li>
+<li>log to synology chat(web, or windows client)</li>
+<li>left click on icon of your user ( top right ), and select integration, then on bots</li>
+<li><dl class="first docutils">
+<dt>click on create</dt>
+<dd><ul class="first last">
+<li>name select as you like</li>
+<li>to outgoing URL   <a class="reference external" href="http:/">http:/</a>/&lt;botip&gt;:7512/&lt;localBotToken&gt;</li>
+<li>save somewhere incoming URL(synoboturl) and token(synologyBotToken).</li>
+<li>click on ok, and close windows</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="usage">
+<h1>usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="explanation">
+<h2>explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>localBotToken</dt>
+<dd>is random string(a-zA-Z0-9). You need this string for
+synology chat server bot integration…..</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>synologyBotToken ( get from synology bot chat integration process )</dt>
+<dd>is token, which is send by synology chat server.
+Token is part of bot integration window in synology
+chat server</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>synoboturl   ( get from synology bot chat integration process )</dt>
+<dd>is url of bot integration in synology</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>conversation</dt>
+<dd>is dict specifying what shall happend if user send
+something to bot</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="init">
+<h2>init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
+<p>minimal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">so</span> <span class="o">=</span> <span class="n">SynoBot</span><span class="p">(</span>
+   <span class="n">localBotToken</span><span class="o">=</span><span class="s2">&quot;1231232131321131444332&quot;</span><span class="p">,</span>
+   <span class="n">synologyBotToken</span><span class="o">=</span><span class="s2">&quot;OCv6m2Lg0YX9aH9GML5zborEU244eYhHqxl1eXc1OYsVebTXBzcvCx43yo0awh75&quot;</span><span class="p">,</span>
+   <span class="n">synoboturl</span><span class="o">=</span><span class="s2">&quot;https://chat.mraky.org/webapi/entry.cgi?api=SYNO.Chat.External&amp;method&quot;</span><span class="o">+</span>
+   <span class="s2">&quot;=chatbot&amp;version=2&amp;token=%22OCv6m2Lg0YX9aH9GML5zborEU244eYhHqxl1eXc1OYsVebTXBzcv&quot;</span><span class="o">+</span>
+   <span class="s2">&quot;Cx43yo0awh75%22&quot;</span><span class="p">,</span>
+   <span class="n">conversation</span><span class="o">=</span><span class="p">{}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="synobot-api">
+<h1>synobot api<a class="headerlink" href="#synobot-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-synochatlib"></span><dl class="class">
+<dt id="synochatlib.SynoBot">
+<em class="property">class </em><code class="descclassname">synochatlib.</code><code class="descname">SynoBot</code><span class="sig-paren">(</span><em>synologyBotToken</em>, <em>localBotToken</em>, <em>synoboturl</em>, <em>conversation</em><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot" title="Permalink to this definition">¶</a></dt>
+<dd><p>chat bot for synology chat server
+see: <a class="reference external" href="https://www.synology.com/en-us/dsm/feature/chat">https://www.synology.com/en-us/dsm/feature/chat</a></p>
+<dl class="docutils">
+<dt>it offer</dt>
+<dd><ul class="first last simple">
+<li>map functions to user’s messages</li>
+<li>function to send question to user, and execute function after answer</li>
+<li>function to send message</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="synochatlib.SynoBot.activeQuestionStructure">
+<code class="descname">activeQuestionStructure</code><em class="property"> = {}</em><a class="headerlink" href="#synochatlib.SynoBot.activeQuestionStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>example
+“&lt;callbackid&gt;”:{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>“username”: “&lt;username&gt;”,</dt>
+<dd>“userid”: [2],
+“function”: function,
+“timeout”: 300</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="synochatlib.SynoBot.conversationStructure">
+<code class="descname">conversationStructure</code><em class="property"> = {'cas': {'cmdregex': 'cas.*', 'function': None}}</em><a class="headerlink" href="#synochatlib.SynoBot.conversationStructure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.genRandomCallbackID">
+<code class="descname">genRandomCallbackID</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.genRandomCallbackID" title="Permalink to this definition">¶</a></dt>
+<dd><p>will return 30 char long string
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.getMessage">
+<code class="descname">getMessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.getMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>process incoming message
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.initServer">
+<code class="descname">initServer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.initServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>flask server initialisation
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.isConnected">
+<code class="descname">isConnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.isConnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>this will send message to synology to itself. if message is received, then self.isConnected = True,
+othervice after self.TIMEOUT sec, it set False
+:return: functin will return notthing, be
+<a class="reference external" href="mailto:#&#37;&#52;&#48;TODO">#<span>&#64;</span>TODO</a>   finish concept of connection verification…</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.processUserInput">
+<code class="descname">processUserInput</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.processUserInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>will process user input at moment of message arrival, will use conversation structure
+in order to get intial user command…
+idea is, this is only initial entry point for conversation with user, which shall be really
+async…
+at moment initial response is receised,   synobot may be sending additional query etc…</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None… it is support to be starting respective functions</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.sendMSG">
+<code class="descname">sendMSG</code><span class="sig-paren">(</span><em>userIDList</em>, <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.sendMSG" title="Permalink to this definition">¶</a></dt>
+<dd><p>send message to somebody on server…
+:param userIDList: list of userid to send message
+:param msg:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="synochatlib.SynoBot.sendQuestionMSG">
+<code class="descname">sendQuestionMSG</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.SynoBot.sendQuestionMSG" title="Permalink to this definition">¶</a></dt>
+<dd><p>send message to somebody on server…
+:param userIDList: list of userid to send message
+:param msg:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="synochatlib.sendAsyncMSG">
+<code class="descclassname">synochatlib.</code><code class="descname">sendAsyncMSG</code><span class="sig-paren">(</span><em>url</em>, <em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#synochatlib.sendAsyncMSG" title="Permalink to this definition">¶</a></dt>
+<dd><p>async function for sending messages. It is here, because i cant run function  ( pickle is, if it is inside class)
+:param url:   synchat chat url…
+:param message:
+:param logger: logger
+:return:</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Hynek Los.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
