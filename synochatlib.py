@@ -48,13 +48,15 @@ class SynoBot(object):
 
     activeQuestionStructure = {}
     """
-    example
-    "<callbackid>":{
-      "username": "<username>",
-            "userid": [2],
-            "function": function,
-            "timeout": 300
-    }
+    example::
+    
+        "<callbackid>":{
+          "username": "<username>",
+                "userid": [2],
+                "function": function,
+                "timeout": 300
+        }
+    
     """
 
     # flask
